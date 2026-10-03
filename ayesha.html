@@ -1,0 +1,1612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ALVERO | Men's Fashion</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    background:#050505;
+    color:white;
+    font-family:Arial,Helvetica,sans-serif;
+}
+
+button{
+    font-family:inherit;
+}
+
+.header{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:72px;
+    background:rgba(5,5,5,.95);
+    backdrop-filter:blur(15px);
+    border-bottom:1px solid #252525;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 7%;
+    z-index:1000;
+}
+
+.logo{
+    font-size:27px;
+    letter-spacing:7px;
+    font-weight:bold;
+}
+
+.nav{
+    display:flex;
+    gap:30px;
+}
+
+.nav button{
+    background:none;
+    border:0;
+    color:#aaa;
+    cursor:pointer;
+    font-size:13px;
+    letter-spacing:1px;
+}
+
+.nav button:hover{
+    color:white;
+}
+
+.header-right{
+    display:flex;
+    align-items:center;
+    gap:18px;
+}
+
+.icon-btn{
+    background:none;
+    border:0;
+    color:white;
+    font-size:21px;
+    cursor:pointer;
+}
+
+.cart-button{
+    position:relative;
+}
+
+.cart-number{
+    position:absolute;
+    top:-8px;
+    right:-9px;
+    background:white;
+    color:black;
+    width:17px;
+    height:17px;
+    border-radius:50%;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:10px;
+    font-weight:bold;
+}
+
+.page{
+    display:none;
+    padding-top:72px;
+    min-height:100vh;
+}
+
+.page.active{
+    display:block;
+}
+
+
+/* HOME */
+
+.hero{
+    min-height:680px;
+    display:flex;
+    align-items:center;
+    padding:70px 8%;
+
+    background:
+    linear-gradient(
+        90deg,
+        #050505 5%,
+        rgba(5,5,5,.85) 35%,
+        rgba(5,5,5,.2)
+    ),
+    url("https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&w=1800&q=90");
+
+    background-size:cover;
+    background-position:center;
+}
+
+.hero-content{
+    max-width:520px;
+}
+
+.hero-mini{
+    color:#aaa;
+    font-size:12px;
+    letter-spacing:6px;
+    margin-bottom:20px;
+}
+
+.hero h1{
+    font-size:70px;
+    line-height:.95;
+    letter-spacing:3px;
+    margin-bottom:25px;
+}
+
+.hero-text{
+    color:#aaa;
+    max-width:400px;
+    line-height:1.8;
+    margin-bottom:35px;
+    font-size:14px;
+}
+
+.shop-now{
+    background:transparent;
+    border:1px solid white;
+    color:white;
+    padding:15px 30px;
+    cursor:pointer;
+    letter-spacing:2px;
+    font-weight:bold;
+    transition:.3s;
+}
+
+.shop-now:hover{
+    background:white;
+    color:black;
+}
+
+
+/* SALE */
+
+.sale-section{
+    padding:50px 8% 20px;
+}
+
+.sale-box{
+    min-height:220px;
+    border:1px solid #383838;
+    border-radius:15px;
+    padding:35px 50px;
+
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+
+    background:
+    linear-gradient(
+        90deg,
+        rgba(20,20,20,.98),
+        rgba(20,20,20,.7)
+    ),
+    url("https://images.unsplash.com/photo-1551488831-00ddcb6c6bd3?auto=format&fit=crop&w=1200&q=90");
+
+    background-size:cover;
+}
+
+.sale-small{
+    color:#aaa;
+    font-size:11px;
+    letter-spacing:4px;
+}
+
+.sale-box h2{
+    font-size:42px;
+    margin:10px 0;
+}
+
+.sale-box p{
+    color:#888;
+}
+
+.sale-button{
+    background:white;
+    color:black;
+    border:0;
+    padding:14px 25px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+
+/* CATEGORIES */
+
+.section-title{
+    text-align:center;
+    padding:65px 20px 35px;
+}
+
+.section-title h2{
+    font-size:30px;
+    letter-spacing:2px;
+}
+
+.section-title p{
+    color:#777;
+    margin-top:10px;
+}
+
+.categories{
+    padding:0 8% 70px;
+
+    display:grid;
+    grid-template-columns:repeat(6,1fr);
+    gap:12px;
+}
+
+.category-card{
+    background:#121212;
+    border:1px solid #2b2b2b;
+    border-radius:10px;
+    padding:27px 8px;
+    text-align:center;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.category-card:hover{
+    background:#202020;
+    border-color:#555;
+    transform:translateY(-4px);
+}
+
+.category-icon{
+    font-size:32px;
+    margin-bottom:13px;
+}
+
+.category-card span{
+    color:#bbb;
+    font-size:12px;
+}
+
+
+/* SHOP */
+
+.shop-top{
+    padding:55px 8% 25px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:end;
+}
+
+.shop-top h1{
+    font-size:43px;
+}
+
+.shop-top p{
+    color:#777;
+    margin-top:8px;
+}
+
+.search-box input{
+    width:230px;
+    height:42px;
+    background:#121212;
+    border:1px solid #333;
+    color:white;
+    padding:0 15px;
+    outline:none;
+}
+
+.filters{
+    padding:0 8% 35px;
+    display:flex;
+    gap:9px;
+    overflow-x:auto;
+}
+
+.filter{
+    white-space:nowrap;
+    padding:10px 18px;
+    border:1px solid #333;
+    border-radius:25px;
+    background:#111;
+    color:#aaa;
+    cursor:pointer;
+    font-size:12px;
+}
+
+.filter.active,
+.filter:hover{
+    background:white;
+    color:black;
+    border-color:white;
+}
+
+
+/* PRODUCTS */
+
+.product-grid{
+    padding:0 8% 80px;
+
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+}
+
+.product-card{
+    background:#131313;
+    border:1px solid #282828;
+    border-radius:13px;
+    overflow:hidden;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.product-card:hover{
+    transform:translateY(-5px);
+    border-color:#555;
+}
+
+.product-image{
+    width:100%;
+    height:390px;
+    background:#222;
+    overflow:hidden;
+    position:relative;
+}
+
+.product-image img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:.4s;
+}
+
+.product-card:hover img{
+    transform:scale(1.04);
+}
+
+.heart{
+    position:absolute;
+    right:15px;
+    top:15px;
+    width:35px;
+    height:35px;
+    border-radius:50%;
+    border:1px solid #555;
+    background:rgba(0,0,0,.6);
+    color:white;
+    cursor:pointer;
+    z-index:3;
+    font-size:18px;
+}
+
+.heart.liked{
+    background:white;
+    color:black;
+}
+
+.product-details{
+    padding:18px;
+}
+
+.product-category{
+    color:#777;
+    font-size:11px;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    margin-bottom:7px;
+}
+
+.product-name{
+    font-size:16px;
+    margin-bottom:10px;
+}
+
+.product-price{
+    font-size:16px;
+    font-weight:bold;
+}
+
+.product-old{
+    color:#666;
+    font-size:12px;
+    text-decoration:line-through;
+    margin-left:6px;
+}
+
+
+/* DETAIL */
+
+.detail-page{
+    padding:55px 8% 90px;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:65px;
+}
+
+.detail-photo{
+    height:650px;
+    background:#151515;
+    border-radius:15px;
+    overflow:hidden;
+    border:1px solid #252525;
+}
+
+.detail-photo img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+.detail-info{
+    padding-top:35px;
+}
+
+.back-button{
+    background:none;
+    border:0;
+    color:#888;
+    cursor:pointer;
+    margin-bottom:30px;
+}
+
+.detail-category{
+    color:#777;
+    font-size:12px;
+    letter-spacing:2px;
+    text-transform:uppercase;
+}
+
+.detail-info h1{
+    font-size:44px;
+    margin:14px 0;
+}
+
+.rating{
+    color:#ddd;
+    font-size:13px;
+    margin-bottom:20px;
+}
+
+.rating span{
+    color:#888;
+    margin-left:8px;
+}
+
+.detail-price{
+    font-size:27px;
+    font-weight:bold;
+    margin-bottom:25px;
+}
+
+.detail-description{
+    color:#999;
+    line-height:1.8;
+    font-size:14px;
+    margin-bottom:30px;
+}
+
+.option-label{
+    color:#aaa;
+    font-size:12px;
+    letter-spacing:1px;
+    margin-bottom:12px;
+}
+
+.color-options{
+    display:flex;
+    gap:10px;
+    margin-bottom:25px;
+}
+
+.color{
+    width:32px;
+    height:32px;
+    border-radius:50%;
+    border:2px solid #444;
+    cursor:pointer;
+}
+
+.color.black{
+    background:#050505;
+}
+
+.color.gray{
+    background:#555;
+}
+
+.color.green{
+    background:#252a24;
+}
+
+.color.beige{
+    background:#b5ae9f;
+}
+
+.color.active{
+    border-color:white;
+}
+
+.size-options{
+    display:flex;
+    gap:9px;
+    margin-bottom:25px;
+}
+
+.size{
+    width:52px;
+    height:43px;
+    background:#111;
+    border:1px solid #444;
+    color:white;
+    cursor:pointer;
+}
+
+.size.active,
+.size:hover{
+    background:white;
+    color:black;
+}
+
+.quantity-row{
+    display:flex;
+    align-items:center;
+    gap:15px;
+    margin-bottom:30px;
+}
+
+.qty-button{
+    width:40px;
+    height:40px;
+    background:#181818;
+    color:white;
+    border:1px solid #444;
+    cursor:pointer;
+    font-size:18px;
+}
+
+.quantity-number{
+    width:30px;
+    text-align:center;
+}
+
+.add-cart{
+    width:100%;
+    height:58px;
+    background:white;
+    color:black;
+    border:0;
+    cursor:pointer;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+.add-cart:hover{
+    background:#aaa;
+}
+
+
+/* CART */
+
+.cart-page{
+    padding:55px 8% 90px;
+}
+
+.cart-page h1{
+    font-size:42px;
+    margin-bottom:35px;
+}
+
+.cart-empty{
+    background:#131313;
+    border:1px solid #292929;
+    border-radius:12px;
+    padding:70px 20px;
+    text-align:center;
+}
+
+.cart-empty p{
+    color:#777;
+    margin:15px 0 25px;
+}
+
+.cart-item{
+    display:flex;
+    align-items:center;
+    gap:20px;
+    padding:20px;
+    background:#131313;
+    border:1px solid #292929;
+    border-radius:12px;
+    margin-bottom:12px;
+}
+
+.cart-item img{
+    width:100px;
+    height:115px;
+    object-fit:cover;
+    border-radius:7px;
+}
+
+.cart-item-info{
+    flex:1;
+}
+
+.cart-item-info h3{
+    margin-bottom:8px;
+}
+
+.cart-item-info p{
+    color:#777;
+    font-size:13px;
+    margin-top:4px;
+}
+
+.cart-remove{
+    background:none;
+    color:#999;
+    border:1px solid #444;
+    padding:9px 14px;
+    cursor:pointer;
+}
+
+.cart-remove:hover{
+    color:white;
+    border-color:white;
+}
+
+.cart-bottom{
+    margin-top:30px;
+    display:flex;
+    align-items:flex-end;
+    flex-direction:column;
+}
+
+.cart-total{
+    font-size:25px;
+    margin-bottom:18px;
+}
+
+.checkout{
+    background:white;
+    color:black;
+    border:0;
+    padding:16px 35px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+
+/* FOOTER */
+
+.footer{
+    background:#090909;
+    border-top:1px solid #222;
+    padding:55px 8%;
+    text-align:center;
+}
+
+.footer-logo{
+    font-size:35px;
+    letter-spacing:9px;
+    margin-bottom:17px;
+}
+
+.footer-sub{
+    color:#777;
+    font-size:11px;
+    letter-spacing:4px;
+}
+
+.footer-line{
+    height:1px;
+    background:#222;
+    margin:30px 0;
+}
+
+.footer-copy{
+    color:#555;
+    font-size:11px;
+}
+
+.footer-contact{
+    color:#999;
+    font-size:13px;
+    line-height:1.9;
+}
+
+
+/* TOAST */
+
+.toast{
+    position:fixed;
+    bottom:25px;
+    right:25px;
+    background:white;
+    color:black;
+    padding:15px 22px;
+    border-radius:7px;
+    font-size:13px;
+    transform:translateY(100px);
+    opacity:0;
+    transition:.35s;
+    z-index:2000;
+}
+
+.toast.show{
+    transform:translateY(0);
+    opacity:1;
+}
+
+
+/* RESPONSIVE */
+
+@media(max-width:1000px){
+
+    .categories{
+        grid-template-columns:repeat(3,1fr);
+    }
+
+    .product-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .detail-page{
+        grid-template-columns:1fr;
+    }
+
+}
+
+@media(max-width:600px){
+
+    .header{
+        height:64px;
+        padding:0 5%;
+    }
+
+    .page{
+        padding-top:64px;
+    }
+
+    .logo{
+        font-size:20px;
+        letter-spacing:5px;
+    }
+
+    .nav{
+        display:none;
+    }
+
+    .hero{
+        min-height:650px;
+        padding:45px 7%;
+    }
+
+    .hero h1{
+        font-size:48px;
+    }
+
+    .sale-section{
+        padding:30px 5%;
+    }
+
+    .sale-box{
+        padding:28px;
+        flex-direction:column;
+        align-items:flex-start;
+        gap:25px;
+    }
+
+    .sale-box h2{
+        font-size:32px;
+    }
+
+    .categories{
+        grid-template-columns:repeat(2,1fr);
+        padding:0 5% 50px;
+    }
+
+    .shop-top{
+        padding:40px 5% 20px;
+        display:block;
+    }
+
+    .shop-top h1{
+        font-size:36px;
+    }
+
+    .search-box{
+        margin-top:20px;
+    }
+
+    .search-box input{
+        width:100%;
+    }
+
+    .filters{
+        padding-left:5%;
+        padding-right:5%;
+    }
+
+    .product-grid{
+        grid-template-columns:1fr;
+        padding:0 5% 60px;
+    }
+
+    .product-image{
+        height:430px;
+    }
+
+    .detail-page{
+        padding:30px 5% 70px;
+        gap:25px;
+    }
+
+    .detail-photo{
+        height:470px;
+    }
+
+    .detail-info{
+        padding-top:0;
+    }
+
+    .detail-info h1{
+        font-size:34px;
+    }
+
+    .cart-page{
+        padding:40px 5%;
+    }
+
+    .cart-item{
+        align-items:flex-start;
+    }
+
+    .cart-item img{
+        width:80px;
+        height:100px;
+    }
+
+}
+</style>
+</head>
+
+<body>
+
+
+<!-- HEADER -->
+
+<header class="header">
+
+    <div class="logo">
+        ALVERO
+    </div>
+
+    <nav class="nav">
+
+        <button onclick="showPage('home')">
+            HOME
+        </button>
+
+        <button onclick="showPage('shop')">
+            SHOP
+        </button>
+
+        <button onclick="showPage('cart')">
+            CART
+        </button>
+
+    </nav>
+
+    <div class="header-right">
+
+        <button class="icon-btn"
+                onclick="focusSearch()">
+            ⌕
+        </button>
+
+        <button class="icon-btn cart-button"
+                onclick="showPage('cart')">
+
+            🛒
+
+            <span class="cart-number"
+                  id="cartCount">
+                0
+            </span>
+
+        </button>
+
+    </div>
+
+</header>
+
+
+
+<!-- HOME -->
+
+<section id="home" class="page active">
+
+    <div class="hero">
+
+        <div class="hero-content">
+
+            <div class="hero-mini">
+                ALVERO MEN'S COLLECTION
+            </div>
+
+            <h1>
+                WEAR<br>
+                YOUR<br>
+                STORY
+            </h1>
+
+            <p class="hero-text">
+                Premium men's fashion for the modern lifestyle.
+                Comfortable, stylish and designed for confidence.
+            </p>
+
+            <button class="shop-now"
+                    onclick="showPage('shop')">
+
+                SHOP NOW →
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- SALE -->
+
+    <div class="sale-section">
+
+        <div class="sale-box">
+
+            <div>
+
+                <div class="sale-small">
+                    LIMITED TIME SALE
+                </div>
+
+                <h2>
+                    UP TO 50% OFF
+                </h2>
+
+                <p>
+                    Selected ALVERO collection
+                </p>
+
+            </div>
+
+            <button class="sale-button"
+                    onclick="showPage('shop')">
+
+                SHOP SALE →
+
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- CATEGORIES -->
+
+    <div class="section-title">
+
+        <h2>
+            SHOP BY CATEGORY
+        </h2>
+
+        <p>
+            Discover the ALVERO collection
+        </p>
+
+    </div>
+
+
+    <div class="categories">
+
+        <div class="category-card"
+             onclick="filterProducts('Baggy Pants')">
+
+            <div class="category-icon">👖</div>
+
+            <span>
+                Baggy Pants
+            </span>
+
+        </div>
+
+
+        <div class="category-card"
+             onclick="filterProducts('T-Shirts')">
+
+            <div class="category-icon">👕</div>
+
+            <span>
+                T-Shirts
+            </span>
+
+        </div>
+
+
+        <div class="category-card"
+             onclick="filterProducts('Trousers')">
+
+            <div class="category-icon">👖</div>
+
+            <span>
+                Trousers
+            </span>
+
+        </div>
+
+
+        <div class="category-card"
+             onclick="filterProducts('Tracksuits')">
+
+            <div class="category-icon">🏃</div>
+
+            <span>
+                Tracksuits
+            </span>
+
+        </div>
+
+
+        <div class="category-card"
+             onclick="filterProducts('Casual Shirts')">
+
+            <div class="category-icon">👔</div>
+
+            <span>
+                Casual Shirts
+            </span>
+
+        </div>
+
+
+        <div class="category-card"
+             onclick="filterProducts('Belts')">
+
+            <div class="category-icon">🧷</div>
+
+            <span>
+                Belts
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- SHOP -->
+
+<section id="shop" class="page">
+
+    <div class="shop-top">
+
+        <div>
+
+            <h1>
+                SHOP
+            </h1>
+
+            <p>
+                Explore ALVERO men's fashion
+            </p>
+
+        </div>
+
+
+        <div class="search-box">
+
+            <input
+                id="searchInput"
+                type="text"
+                placeholder="Search products..."
+                oninput="searchProducts()"
+            >
+
+        </div>
+
+    </div>
+
+
+    <!-- FILTERS -->
+
+    <div class="filters">
+
+        <button class="filter active"
+                onclick="filterProducts('All')">
+            All
+        </button>
+
+        <button class="filter"
+                onclick="filterProducts('Baggy Pants')">
+            Baggy Pants
+        </button>
+
+        <button class="filter"
+                onclick="filterProducts('T-Shirts')">
+            T-Shirts
+        </button>
+
+        <button class="filter"
+                onclick="filterProducts('Trousers')">
+            Trousers
+        </button>
+
+        <button class="filter"
+                onclick="filterProducts('Tracksuits')">
+            Tracksuits
+        </button>
+
+        <button class="filter"
+                onclick="filterProducts('Casual Shirts')">
+            Casual Shirts
+        </button>
+
+        <button class="filter"
+                onclick="filterProducts('Belts')">
+            Belts
+        </button>
+
+    </div>
+
+
+    <div class="product-grid"
+         id="productGrid">
+
+    </div>
+
+</section>
+
+
+
+<!-- PRODUCT DETAIL -->
+
+<section id="detail" class="page">
+
+    <div class="detail-page">
+
+        <div class="detail-photo">
+
+            <img id="detailImage"
+                 src=""
+                 alt="Product">
+
+        </div>
+
+
+        <div class="detail-info">
+
+            <button class="back-button"
+                    onclick="showPage('shop')">
+
+                ← Back to Shop
+
+            </button>
+
+
+            <div class="detail-category"
+                 id="detailCategory">
+            </div>
+
+
+            <h1 id="detailName">
+            </h1>
+
+
+            <div class="rating">
+                ★★★★★
+                <span>
+                    4.8 (120 reviews)
+                </span>
+            </div>
+
+
+            <div class="detail-price"
+                 id="detailPrice">
+            </div>
+
+
+            <p class="detail-description">
+
+                Premium ALVERO men's fashion designed
+                for comfort, quality and modern style.
+
+            </p>
+
+
+            <!-- COLOR -->
+
+            <div class="option-label">
+                COLOR
+            </div>
+
+            <div class="color-options">
+
+                <button class="color black active"
+                        onclick="chooseColor(this)">
+                </button>
+
+                <button class="color gray"
+                        onclick="chooseColor(this)">
+                </button>
+
+                <button class="color green"
+                        onclick="chooseColor(this)">
+                </button>
+
+                <button class="color beige"
+                        onclick="chooseColor(this)">
+                </button>
+
+            </div>
+
+
+            <!-- SIZE -->
+
+            <div class="option-label">
+                SIZE
+            </div>
+
+            <div class="size-options">
+
+                <button class="size"
+                        onclick="chooseSize(this)">
+                    S
+                </button>
+
+                <button class="size active"
+                        onclick="chooseSize(this)">
+                    M
+                </button>
+
+                <button class="size"
+                        onclick="chooseSize(this)">
+                    L
+                </button>
+
+                <button class="size"
+                        onclick="chooseSize(this)">
+                    XL
+                </button>
+
+            </div>
+
+
+            <!-- QUANTITY -->
+
+            <div class="option-label">
+                QUANTITY
+            </div>
+
+            <div class="quantity-row">
+
+                <button class="qty-button"
+                        onclick="changeQty(-1)">
+                    -
+                </button>
+
+                <span class="quantity-number"
+                      id="qtyNumber">
+                    1
+                </span>
+
+                <button class="qty-button"
+                        onclick="changeQty(1)">
+                    +
+                </button>
+
+            </div>
+
+            <button class="add-cart"
+                    onclick="addToCart()">
+                ADD TO CART
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- CART -->
+
+<section id="cart" class="page">
+
+    <div class="cart-page">
+
+        <h1>
+            YOUR CART
+        </h1>
+
+        <div id="cartContent"></div>
+
+        <div class="cart-bottom"
+             id="cartBottom"
+             style="display:none;">
+
+            <div class="cart-total"
+                 id="cartTotal">
+            </div>
+
+            <button class="checkout"
+                    onclick="checkout()">
+                CHECKOUT
+            </button>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- FOOTER -->
+
+<footer class="footer">
+
+    <div class="footer-logo">
+        ALVERO
+    </div>
+
+    <div class="footer-sub">
+        MEN'S FASHION
+    </div>
+
+    <div class="footer-line"></div>
+
+    <p class="footer-contact">
+        📍 Attari Plaza, Shop No. 6, Shahdara, Lahore<br>
+        📞 0300-4973284 &nbsp;|&nbsp; ✉ danishtrader246@gmail.com
+    </p>
+
+    <div class="footer-line"></div>
+
+    <div class="footer-copy">
+        © 2026 ALVERO. All rights reserved.
+    </div>
+
+</footer>
+
+
+<!-- TOAST -->
+
+<div class="toast" id="toast"></div>
+
+
+<script>
+
+const products = [
+    { id:1,  name:"Cargo Baggy Pants",        category:"Baggy Pants",   price:4500, img:"https://images.unsplash.com/photo-1517438476312-10d79c077509?auto=format&fit=crop&w=800&q=80" },
+    { id:2,  name:"Relaxed Fit Baggy Pants",  category:"Baggy Pants",   price:4200, img:"https://images.unsplash.com/photo-1473966968600-fa801b869a1a?auto=format&fit=crop&w=800&q=80" },
+    { id:3,  name:"Streetwear Baggy Pants",   category:"Baggy Pants",   price:4800, img:"https://images.unsplash.com/photo-1584865288642-42078afe6942?auto=format&fit=crop&w=800&q=80" },
+    { id:4,  name:"Oversized Tee",            category:"T-Shirts",      price:1800, img:"https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=800&q=80" },
+    { id:5,  name:"Graphic Print Tee",        category:"T-Shirts",      price:1900, img:"https://images.unsplash.com/photo-1576566588028-4147f3842f27?auto=format&fit=crop&w=800&q=80" },
+    { id:6,  name:"Basic Crew Tee",           category:"T-Shirts",      price:1500, img:"https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=800&q=80" },
+    { id:7,  name:"Slim Fit Trousers",        category:"Trousers",      price:3200, img:"https://images.unsplash.com/photo-1594938298603-c8148c4dae35?auto=format&fit=crop&w=800&q=80" },
+    { id:8,  name:"Formal Trousers",          category:"Trousers",      price:3500, img:"https://images.unsplash.com/photo-1506629082955-511b1aa562c8?auto=format&fit=crop&w=800&q=80" },
+    { id:9,  name:"Full Zip Tracksuit",       category:"Tracksuits",    price:6500, img:"https://images.unsplash.com/photo-1483721310020-03333e577078?auto=format&fit=crop&w=800&q=80" },
+    { id:10, name:"Two Piece Tracksuit",      category:"Tracksuits",    price:6000, img:"https://images.unsplash.com/photo-1552902865-b72c031ac5ea?auto=format&fit=crop&w=800&q=80" },
+    { id:11, name:"Drop Shoulder Shirt",      category:"Casual Shirts", price:3000, img:"https://images.unsplash.com/photo-1602810318383-e386cc2a3ccf?auto=format&fit=crop&w=800&q=80" },
+    { id:12, name:"Flannel Casual Shirt",     category:"Casual Shirts", price:2800, img:"https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?auto=format&fit=crop&w=800&q=80" },
+    { id:13, name:"Leather Belt",             category:"Belts",         price:1500, img:"https://images.unsplash.com/photo-1553062407-98eeb64c6a62?auto=format&fit=crop&w=800&q=80" },
+    { id:14, name:"Reversible Belt",          category:"Belts",         price:1700, img:"https://images.unsplash.com/photo-1614252235316-8c857d38b5f4?auto=format&fit=crop&w=800&q=80" }
+];
+
+let cart = [];
+let currentProduct = null;
+let selectedColor = 'black';
+let selectedSize = 'M';
+let qty = 1;
+let activeCategory = 'All';
+
+function showPage(id){
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
+    window.scrollTo(0,0);
+    if(id === 'cart') renderCart();
+}
+
+function focusSearch(){
+    showPage('shop');
+    setTimeout(() => document.getElementById('searchInput').focus(), 100);
+}
+
+function discountedPrice(price){
+    return Math.round(price * 0.7);
+}
+
+function renderProducts(list){
+    const grid = document.getElementById('productGrid');
+    grid.innerHTML = '';
+    list.forEach(p => {
+        const card = document.createElement('div');
+        card.className = 'product-card';
+        card.onclick = () => openDetail(p.id);
+        card.innerHTML = `
+            <div class="product-image">
+                <button class="heart" onclick="event.stopPropagation(); toggleHeart(this)">♡</button>
+                <img src="${p.img}" alt="${p.name}">
+            </div>
+            <div class="product-details">
+                <div class="product-category">${p.category}</div>
+                <div class="product-name">${p.name}</div>
+                <div class="product-price">
+                    Rs ${discountedPrice(p.price).toLocaleString()}
+                    <span class="product-old">Rs ${p.price.toLocaleString()}</span>
+                </div>
+            </div>`;
+        grid.appendChild(card);
+    });
+}
+
+function filterProducts(cat){
+    activeCategory = cat;
+    document.querySelectorAll('.filter').forEach(f => {
+        f.classList.toggle('active', f.textContent.trim() === cat);
+    });
+    showPage('shop');
+    applyFilters();
+}
+
+function searchProducts(){
+    applyFilters();
+}
+
+function applyFilters(){
+    const term = document.getElementById('searchInput').value.toLowerCase();
+    let list = products;
+    if(activeCategory !== 'All') list = list.filter(p => p.category === activeCategory);
+    if(term) list = list.filter(p => p.name.toLowerCase().includes(term));
+    renderProducts(list);
+}
+
+function openDetail(id){
+    currentProduct = products.find(p => p.id === id);
+    qty = 1;
+    selectedColor = 'black';
+    selectedSize = 'M';
+
+    document.getElementById('detailImage').src = currentProduct.img;
+    document.getElementById('detailCategory').textContent = currentProduct.category;
+    document.getElementById('detailName').textContent = currentProduct.name;
+    document.getElementById('detailPrice').innerHTML =
+        `Rs ${discountedPrice(currentProduct.price).toLocaleString()} <span class="product-old">Rs ${currentProduct.price.toLocaleString()}</span>`;
+    document.getElementById('qtyNumber').textContent = qty;
+
+    document.querySelectorAll('.color').forEach(c => c.classList.remove('active'));
+    document.querySelector('.color.black').classList.add('active');
+
+    document.querySelectorAll('.size').forEach(s => s.classList.remove('active'));
+    document.querySelectorAll('.size')[1].classList.add('active');
+
+    showPage('detail');
+}
+
+function chooseColor(el){
+    document.querySelectorAll('.color').forEach(c => c.classList.remove('active'));
+    el.classList.add('active');
+    selectedColor = [...el.classList].find(c => ['black','gray','green','beige'].includes(c));
+}
+
+function chooseSize(el){
+    document.querySelectorAll('.size').forEach(s => s.classList.remove('active'));
+    el.classList.add('active');
+    selectedSize = el.textContent.trim();
+}
+
+function changeQty(n){
+    qty = Math.max(1, qty + n);
+    document.getElementById('qtyNumber').textContent = qty;
+}
+
+function addToCart(){
+    cart.push({ ...currentProduct, qty, color: selectedColor, size: selectedSize });
+    updateCartCount();
+    showToast('Added to cart');
+}
+
+function updateCartCount(){
+    document.getElementById('cartCount').textContent = cart.reduce((a,c) => a + c.qty, 0);
+}
+
+function renderCart(){
+    const content = document.getElementById('cartContent');
+    const bottom = document.getElementById('cartBottom');
+
+    if(cart.length === 0){
+        content.innerHTML = `
+            <div class="cart-empty">
+                <p>Your cart is empty</p>
+                <button class="shop-now" onclick="showPage('shop')">SHOP NOW</button>
+            </div>`;
+        bottom.style.display = 'none';
+        return;
+    }
+
+    content.innerHTML = cart.map((item, i) => `
+        <div class="cart-item">
+            <img src="${item.img}" alt="${item.name}">
+            <div class="cart-item-info">
+                <h3>${item.name}</h3>
+                <p>Color: ${item.color} | Size: ${item.size} | Qty: ${item.qty}</p>
+                <p>Rs ${discountedPrice(item.price).toLocaleString()} each</p>
+            </div>
+            <button class="cart-remove" onclick="removeFromCart(${i})">Remove</button>
+        </div>`).join('');
+
+    const total = cart.reduce((a,c) => a + discountedPrice(c.price) * c.qty, 0);
+    document.getElementById('cartTotal').textContent = `Total: Rs ${total.toLocaleString()}`;
+    bottom.style.display = 'flex';
+}
+
+function removeFromCart(i){
+    cart.splice(i, 1);
+    updateCartCount();
+    renderCart();
+}
+
+function checkout(){
+    showToast('Order placed! We will contact you soon.');
+    cart = [];
+    updateCartCount();
+    renderCart();
+}
+
+function toggleHeart(el){
+    el.classList.toggle('liked');
+    el.textContent = el.classList.contains('liked') ? '♥' : '♡';
+}
+
+function showToast(msg){
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 2500);
+}
+
+renderProducts(products);
+
+</script>
+
+
+<!-- N8N CHATBOT -->
+
+<link href="https://cdn.jsdelivr.net/npm/@n8n/chat/dist/style.css" rel="stylesheet" />
+<script type="module">
+    import { createChat } from 'https://cdn.jsdelivr.net/npm/@n8n/chat/dist/chat.bundle.es.js';
+
+    createChat({
+        webhookUrl: 'http://localhost:5678/webhook/96e7e0f6-1d05-4dcf-aa76-fcb942058735/chat'
+    });
+</script>
+
+</body>
+</html>
